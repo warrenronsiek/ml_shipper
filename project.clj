@@ -1,4 +1,4 @@
-(defproject ml_shipper_cli "0.1.0-SNAPSHOT"
+(defproject ml_shipper "0.1.0-SNAPSHOT"
   :description "FIXME: write description"
   :main ml-shipper-cli.core
   :url "http://example.com/FIXME"

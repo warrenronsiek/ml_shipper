@@ -1,4 +1,4 @@
-(ns ml-shipper-cli.core-test
+(ns ml-shipper.core-test
   (:require [clojure.test :refer :all]
             [ml-shipper-cli.core :refer :all]))
 

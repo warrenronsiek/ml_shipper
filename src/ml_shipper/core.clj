@@ -1,4 +1,4 @@
-(ns ml-shipper-cli.core
+(ns ml-shipper.core
   (:require [cli-matic.core :refer [run-cmd]])
   (:require [ml-shipper-cli.local-ops.make-project :refer [make-project]])
   (:gen-class))

@@ -1,4 +1,4 @@
-(ns ml-shipper-cli.local-ops.make-project
+(ns ml-shipper.local-ops.make-project
   (:require [libpython-clj.require :refer [require-python]]
             [libpython-clj.python :refer [py. py.. py.-] :as py]
             [clojure.java.io :as io]

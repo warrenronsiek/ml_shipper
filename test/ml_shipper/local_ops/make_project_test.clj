@@ -1,4 +1,4 @@
-(ns ml-shipper-cli.local-ops.make-project-test
+(ns ml-shipper.local-ops.make-project-test
   (:require [clojure.test :refer :all]
             [ml-shipper-cli.local-ops.make-project :refer :all]
             [clojure.java.io :as io]
@@ -22,8 +22,8 @@
     (tail-recursive-delete (str venv-name))))
 (use-fixtures :once venv-setup-teardown)
 
-(deftest venv-creation
-  (testing "virtualenv creation"
+(deftest project-creation
+  (testing "project creation"
     (is (.exists (io/file (str *proj-name* "/venv"))))
     (is (.exists (io/file (str *proj-name* "/requirements.txt"))))
     (is (= (slurp (str *proj-name* "/requirements.txt")) (str "ml_shipper==" version)))
