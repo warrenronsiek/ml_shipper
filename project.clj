@@ -7,6 +7,7 @@
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [cli-matic "0.4.3"]
                  [me.raynes/fs "1.4.6"]
-                 [clj-python/libpython-clj "1.45"]]
+                 [clj-python/libpython-clj "1.45"]
+                 [clj-commons/clj-yaml "0.7.1"]]
   :repl-options {:init-ns ml-shipper-cli.core}
   :profiles {:uberjar {:aot :all}})

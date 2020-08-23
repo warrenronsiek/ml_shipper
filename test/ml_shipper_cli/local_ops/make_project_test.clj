@@ -2,7 +2,8 @@
   (:require [clojure.test :refer :all]
             [ml-shipper-cli.local-ops.make-project :refer :all]
             [clojure.java.io :as io]
-            [ml-shipper-cli.vars :refer [version]]))
+            [ml-shipper-cli.vars :refer [version]]
+            [clj-yaml.core :as yaml]))
 
 (def ^:dynamic *proj-name*)
 
@@ -25,4 +26,8 @@
   (testing "virtualenv creation"
     (is (.exists (io/file (str *proj-name* "/venv"))))
     (is (.exists (io/file (str *proj-name* "/requirements.txt"))))
-    (is (= (slurp (str *proj-name* "/requirements.txt")) (str "ml_shipper==" version)))))
+    (is (= (slurp (str *proj-name* "/requirements.txt")) (str "ml_shipper==" version)))
+    (is (.exists (io/file (str *proj-name* "/ml_shipper.yml"))))
+    (is (= (-> (yaml/parse-string (slurp (str *proj-name* "/ml_shipper.yml")))
+               (:ml-shipper) (:name))
+           (str *proj-name*)))))
