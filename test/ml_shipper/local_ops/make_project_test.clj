@@ -1,8 +1,8 @@
 (ns ml-shipper.local-ops.make-project-test
   (:require [clojure.test :refer :all]
-            [ml-shipper-cli.local-ops.make-project :refer :all]
+            [ml-shipper.local-ops.make-project :refer :all]
             [clojure.java.io :as io]
-            [ml-shipper-cli.vars :refer [version]]
+            [ml-shipper.vars :refer [version]]
             [clj-yaml.core :as yaml]))
 
 (def ^:dynamic *proj-name*)

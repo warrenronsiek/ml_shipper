@@ -2,7 +2,7 @@
   (:require [libpython-clj.require :refer [require-python]]
             [libpython-clj.python :refer [py. py.. py.-] :as py]
             [clojure.java.io :as io]
-            [ml-shipper-cli.vars :refer [version]]
+            [ml-shipper.vars :refer [version]]
             [clj-yaml.core :as yaml]
             [clojure.string :as str-ops])
   (:import (java.io File)))

@@ -1,6 +1,6 @@
 (ns ml-shipper.core
   (:require [cli-matic.core :refer [run-cmd]])
-  (:require [ml-shipper-cli.local-ops.make-project :refer [make-project]])
+  (:require [ml-shipper.local-ops.make-project :refer [make-project]])
   (:gen-class))
 
 (defn hello [{:keys [name]}] (println (str "Hi! " name)))
