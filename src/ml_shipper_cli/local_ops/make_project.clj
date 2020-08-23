@@ -10,7 +10,7 @@
 
 (defn make-project [{:keys [name]}]
   (let [dir (str (System/getProperty "user.dir") "/./" name)]
-    (println (str "creating project virtualenv" name))
+    (println (str "creating virtualenv for project: " name))
     (.mkdir (File. dir))
     (py. (venv/EnvBuilder {:with_pip "True"}) create (str dir "/venv"))
     (println (str "creating project requirements"))
