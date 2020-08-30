@@ -3,16 +3,13 @@
 
 
 (defn create-bucket
-  ([suffix]
+  "returns a boolean value to indicate if the bucket is created or not"
+  ([& suffix]
    (let [s3 (aws/client {:api :s3})
          sts (aws/client {:api :sts})
-         account (:Account (aws/invoke sts {:op :GetCallerIdentity}))]
-     (aws/invoke s3 {:op :CreateBucket :request {:Bucket                    (str "ml-shipper-" suffix)
-                                                 :ACL                       "private"
-                                                 :CreateBucketConfiguration {:LocationConstraint "us-west-2"}}})))
-  ([] (let [s3 (aws/client {:api :s3})
-            sts (aws/client {:api :sts})
-            account (:Account (aws/invoke sts {:op :GetCallerIdentity}))]
-        (aws/invoke s3 {:op :CreateBucket :request {:Bucket                    (str "ml-shipper-" account)
-                                                    :ACL                       "private"
-                                                    :CreateBucketConfiguration {:LocationConstraint "us-west-2"}}}))))
+         account (:Account (aws/invoke sts {:op :GetCallerIdentity}))
+         bucket-name (str "ml-shipper-" (or (first suffix) account))
+         response (aws/invoke s3 {:op :CreateBucket :request {:Bucket                    bucket-name
+                                                              :ACL                       "private"
+                                                              :CreateBucketConfiguration {:LocationConstraint "us-west-2"}}})]
+     (if (:Location response) bucket-name false))))

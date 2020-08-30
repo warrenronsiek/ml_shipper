@@ -7,16 +7,17 @@
 (def ^:dynamic *bucket-name*)
 
 (defn s3-setup-teardown [test-func]
-  (let [rand-name (str (gensym))]
+  (let [rand-name (subs (str (gensym)) 3)
+        bucket-name (str "ml-shipper-" rand-name)]
     (create-bucket rand-name)
-    (binding [*bucket-name* rand-name] (test-func))))
+    (binding [*bucket-name* bucket-name] (test-func))
+    (#(aws/invoke s3 {:op :DeleteBucket :request {:Bucket bucket-name}}))))
 (use-fixtures :once s3-setup-teardown)
 
 
 (deftest create-bucket-test
   (testing "bucket exists"
-    (is (reduce
-          (fn [_ x] (if (= x *bucket-name*) (reduced x) nil))
-          (map :Name (:Buckets (aws/invoke s3 {:op :ListBuckets})))))))
-
-(run-tests)
+    (is (= (reduce
+             (fn [_ x] (if (= x *bucket-name*) (reduced x) nil))
+             (map :Name (:Buckets (aws/invoke s3 {:op :ListBuckets}))))
+           *bucket-name*))))
