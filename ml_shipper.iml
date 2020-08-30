@@ -13,11 +13,17 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="scala-sdk-2.13.0" level="application" />
     <orderEntry type="library" name="Leiningen: camel-snake-kebab:0.4.0" level="project" />
     <orderEntry type="library" name="Leiningen: cli-matic:0.4.3" level="project" />
     <orderEntry type="library" name="Leiningen: clj-commons/clj-yaml:0.7.1" level="project" />
     <orderEntry type="library" name="Leiningen: clj-python/libpython-clj:1.45" level="project" />
     <orderEntry type="library" name="Leiningen: clojure-complete:0.2.5" level="project" />
+    <orderEntry type="library" name="Leiningen: com.cognitect.aws/api:0.8.474" level="project" />
+    <orderEntry type="library" name="Leiningen: com.cognitect.aws/endpoints:1.1.11.842" level="project" />
+    <orderEntry type="library" name="Leiningen: com.cognitect.aws/s3:809.2.734.0" level="project" />
+    <orderEntry type="library" name="Leiningen: com.cognitect.aws/sts:798.2.678.0" level="project" />
+    <orderEntry type="library" name="Leiningen: com.cognitect/http-client:0.1.104" level="project" />
     <orderEntry type="library" name="Leiningen: com.tdunning/t-digest:3.2" level="project" />
     <orderEntry type="library" name="Leiningen: expound:0.8.4" level="project" />
     <orderEntry type="library" name="Leiningen: insn:0.4.0" level="project" />
@@ -33,8 +39,10 @@
     <orderEntry type="library" name="Leiningen: org.clojure/core.cache:0.8.2" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/core.memoize:0.8.2" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/core.specs.alpha:0.2.44" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure/data.codec:0.1.0" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/data.json:0.2.7" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/data.priority-map:0.0.7" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure/data.xml:0.2.0-alpha6" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/math.combinatorics:0.1.6" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/math.numeric-tower:0.0.4" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/spec.alpha:0.2.176" level="project" />
@@ -44,6 +52,10 @@
     <orderEntry type="library" name="Leiningen: org.clojure/tools.cli:1.0.194" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/tools.logging:0.4.1" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/tools.reader:1.3.2" level="project" />
+    <orderEntry type="library" name="Leiningen: org.eclipse.jetty/jetty-client:9.4.24.v20191120" level="project" />
+    <orderEntry type="library" name="Leiningen: org.eclipse.jetty/jetty-http:9.4.24.v20191120" level="project" />
+    <orderEntry type="library" name="Leiningen: org.eclipse.jetty/jetty-io:9.4.24.v20191120" level="project" />
+    <orderEntry type="library" name="Leiningen: org.eclipse.jetty/jetty-util:9.4.24.v20191120" level="project" />
     <orderEntry type="library" name="Leiningen: org.flatland/ordered:1.5.9" level="project" />
     <orderEntry type="library" name="Leiningen: org.ow2.asm/asm:7.1" level="project" />
     <orderEntry type="library" name="Leiningen: org.roaringbitmap/RoaringBitmap:0.8.13" level="project" />
