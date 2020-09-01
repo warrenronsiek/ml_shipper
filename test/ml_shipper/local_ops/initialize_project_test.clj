@@ -7,9 +7,9 @@
 (def ^:dynamic *bucket-name*)
 
 (defn s3-setup-teardown [test-func]
-  (let [rand-name (subs (str (gensym)) 3)
-        bucket-name (str "ml-shipper-" rand-name)]
-    (create-bucket rand-name)
+  (let [sts (aws/client {:api :sts})
+        bucket-name (str "ml-shipper-" (:Account (aws/invoke sts {:op :GetCallerIdentity})))]
+    (create-bucket)
     (binding [*bucket-name* bucket-name] (test-func))
     (#(aws/invoke s3 {:op :DeleteBucket :request {:Bucket bucket-name}}))))
 (use-fixtures :once s3-setup-teardown)
