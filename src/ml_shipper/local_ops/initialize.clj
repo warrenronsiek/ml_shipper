@@ -1,8 +1,9 @@
 (ns ml-shipper.local-ops.initialize
-  (:require [cognitect.aws.client.api :as aws]))
+  (:require [cognitect.aws.client.api :as aws]
+            [clojure.java.shell :as shell]))
 
 
-(defn create-bucket
+(defn get-create-bucket
   "returns the name of the bucket if it was created or already exists"
   []
   (let [s3 (aws/client {:api :s3})
@@ -16,3 +17,8 @@
       (:Location response) bucket-name
       (= (:Code (:Error response)) "BucketAlreadyOwnedByYou") bucket-name
       :else (throw (Exception. "Unable to create bucket.")))))
+
+(defn build-terraform
+  "creates the terraform resources required to read from the bucket"
+  []
+  ())
