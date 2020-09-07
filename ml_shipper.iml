@@ -13,7 +13,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="scala-sdk-2.13.0" level="application" />
     <orderEntry type="library" name="Leiningen: camel-snake-kebab:0.4.0" level="project" />
     <orderEntry type="library" name="Leiningen: cli-matic:0.4.3" level="project" />
     <orderEntry type="library" name="Leiningen: clj-commons/clj-yaml:0.7.1" level="project" />
