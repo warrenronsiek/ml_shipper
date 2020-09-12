@@ -1,19 +1,12 @@
 (ns ml-shipper.local-ops.make-project-test
   (:require [clojure.test :refer :all]
             [ml-shipper.local-ops.make-project :refer :all]
+            [ml-shipper.local-ops.utils :refer [tail-recursive-delete]]
             [clojure.java.io :as io]
             [ml-shipper.vars :refer [version]]
             [clj-yaml.core :as yaml]))
 
 (def ^:dynamic *proj-name*)
-
-(defn tail-recursive-delete
-  [& fs]
-  (when-let [f (first fs)]
-    (if-let [cs (seq (.listFiles (io/file f)))]
-      (recur (concat cs fs))
-      (do (io/delete-file f)
-          (recur (rest fs))))))
 
 (defn venv-setup-teardown [test-func]
   (let [venv-name (gensym "proj")]
