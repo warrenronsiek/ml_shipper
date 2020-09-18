@@ -14,5 +14,4 @@
                  [com.cognitect.aws/s3 "809.2.734.0"]
                  [com.cognitect.aws/sts "798.2.678.0"]]
   :repl-options {:init-ns ml-shipper.core}
-  :plugins [[lein-environ "0.4.0"]]
   :profiles {:uberjar {:aot :all}})
